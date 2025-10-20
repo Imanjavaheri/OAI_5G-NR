@@ -15,21 +15,20 @@ dedicated RF hardware and bypasses core network connectivity.
 3. Prepare four separate terminal windows so the softmodems and traffic tools
    can run concurrently.
 
-## Phase 1 – Clean and Build Softmodems
+## Phase 1 – Build Softmodems (if not already built)
 
-These steps ensure the `nr-softmodem` and `nr-uesoftmodem` binaries are rebuilt
+These steps ensure the `nr-softmodem` and `nr-uesoftmodem` binaries are built
 for the simulator configuration.
 
 ```bash
-# 1. Stop any running OAI softmodem processes (Ctrl + C).
 
-# 2. Change to the root OAI directory:
+# 1. Change to the root OAI directory:
 cd ~/openairinterface5g
 
-# 3. Clean previous build artifacts (recommended):
+# 2. Clean previous build artifacts (recommended):
 ./cmake_targets/build_oai --clean
 
-# 4. Build the gNB and NR UE executables using simulated hardware:
+# 3. Build the gNB and NR UE executables using simulated hardware:
 ./cmake_targets/build_oai --gNB --nrUE -w None
 ```
 
